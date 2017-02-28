@@ -1,0 +1,43 @@
+<header class="land" ng-controller="headerCtl" scroll ng-class="{ 'scroll': fix }">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 col-md-3 col-sm-6 col-xs-5">
+        <div class="logo-wrap" data-block=".top-slider-sect" scroll-on-click>
+          <img src="img/logo_gray.svg" alt="">
+        </div>
+      </div>
+      <div class="col-lg-10 col-md-9 col-sm-6 col-xs-7 text-right">
+        <ul class="main-menu clearfix">
+          <li><span data-block="#aboutSect" scroll-on-click>О ресурсе</span></li>
+          <li><span data-block="#possibleSect" scroll-on-click>Возможности</span></li>
+          <li><span data-block="#commentsSect" scroll-on-click>Отзывы</span></li>
+          <li><span data-block="#priceSect" scroll-on-click>Прайс</span></li>
+          <li><span data-block="footer" scroll-on-click>Приложение</span></li>
+        </ul>
+        <div class="btn-wrap clearfix">
+          <a href="/registration" class="btn btn-green full-btn hide-xx">Зарегистрироваться</a>
+          <a ng-href="/login" class="btn full-btn hide-xx">Войти</a>
+          <a href="#" class="btn btn-green mob-menu-btn" ng-click="landMenu()">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mob-menu-wrap-land">
+    <div class="container">
+      <ul class="main-menu-mob clearfix">
+        <li><span data-block="#aboutSect" scroll-on-click>О ресурсе</span></li>
+        <li><span data-block="#possibleSect" scroll-on-click>Возможности</span></li>
+        <li><span data-block="#commentsSect" scroll-on-click>Отзывы</span></li>
+        <li><span data-block="#priceSect" scroll-on-click>Прайс</span></li>
+        <li><span data-block="footer" scroll-on-click>Приложение</span></li>
+      </ul>
+      <a href="/registration" class="btn btn-green full-btn">Зарегистрироваться</a>
+      <a ng-href="/login" class="btn full-btn">Войти</a>
+    </div>
+  </div>
+</header>

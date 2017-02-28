@@ -1,0 +1,115 @@
+
+<div class="filters-wrap">
+  <div class="row">
+    <div class="col-xs-12 visible-xs">
+      <div class="right-side" ng-show="is_super == 'true'">
+        <label class="select-stl">
+          <input type="checkbox"><span class="selected">{{selectP}}</span>
+          <div class="list-wra">
+            <div class="inner-wrap">
+              <ul>
+                <li ng-repeat="provider in selectListP" ng-click="selectedP(provider.provider_name, provider.provider_code)">
+                  {{provider.provider_name}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </label>
+        <button class="btn btn-green" ng-click="moveToProvider()">Move to provider</button>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="filters-side">
+        <label class="check-all">
+          <input type="checkbox" ng-click="isChecked = !isChecked">
+          <div class="check-style"></div><span class="text">Select all</span>
+        </label>
+        <span class="delete-btn" ng-show="is_super == 'true'" ng-click="deleteAll(isChecked)"><i class="dash-cw cw-delete"></i></span>
+        <div class="sort-wrap"><span class="sort-btn" ng-click="reverse = !reverse"><i class="dash-cw cw-sort"></i></span>
+          <label class="filter-slct">
+            <input type="checkbox"><span class="selected" ng-init="select = 'ID clients'">{{select}}</span>
+            <div class="list-wra">
+              <div class="inner-wrap">
+                <ul>
+                  <li ng-click="sortBy('id'); select = 'Date created'">ID signals</li>
+                  <li ng-click="sortBy('first_name'); select = 'First name'">First name</li>
+                  <li ng-click="sortBy('provider.provider_name'); select = 'Provider'">Provider</li>
+                  <li ng-click="sortBy('user_type'); select = 'Account'">Account</li>
+                </ul>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 hidden-xs">
+      <div class="right-side" ng-show="is_super == 'true'">
+        <label class="select-stl">
+          <input type="checkbox"><span class="selected">{{selectP}}</span>
+          <div class="list-wra">
+            <div class="inner-wrap">
+              <ul>
+                <li ng-repeat="provider in selectListP" ng-click="selectedP(provider.provider_name, provider.provider_code)">
+                  {{provider.provider_name}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </label>
+        <button class="btn btn-green" ng-click="moveToProvider()">Move to provider</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- filter-wrap end-->
+<!-- end mixin-->
+<div class="table-wrap">
+  <table class="table-style table-clients">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Extend user</td>
+        <td>First name</td>
+        <td>Last name</td>
+        <td>Phone</td>
+        <td>Country</td>
+        <td>Provider</td>
+        <td>Account</td>
+        <td>Expitation date</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="client in clients | orderBy:propertyName:reverse">
+        <td>
+          <label class="check-stl">
+            <input type="checkbox" ng-checked="isChecked" class="check-id" data-checkID="{{client.id}}">
+            <div class="check-style"></div>
+          </label><span class="id-num">{{client.id}}</span>
+        </td>
+        <td>
+          <label class="check-extend">
+            <input type="checkbox" ng-checked="client.is_extend" ng-click="sendExtend($event, client.id)"><span class="round"></span><span class="text"></span>
+          </label>
+        </td>
+        <td><span class="text">{{client.first_name}}</span></td>
+        <td><span class="text">{{client.last_name}}</span></td>
+        <td><span class="text">{{client.phone_number}}</span></td>
+        <td><span class="text">{{client.country}}</span></td>
+        <td><span class="text">{{client.provider.provider_name}}</span></td>
+        <td >
+        	<span class="text" ng-show="client.user_type == userType.expired">expired</span>
+        	<span class="text" ng-show="client.user_type == userType.basic">basic</span>
+        	<span class="text" ng-show="client.user_type == userType.standard">standard</span>
+        	<span class="text" ng-show="client.user_type == userType.premium">premium</span>
+        </td>
+        <td><span class="text">{{client.date_signal_receive_to | date:"dd.MM.yy | HH:mm"}}</span></td>
+        <td>
+        	<span data-toggle="modal" data-target="#modal" class="edit-btn" ng-click="modalTamplate('edit-client'); getDataClient(client, selectListP, client.provider)" ng-show="is_super == 'true'"><i class="dash-cw cw-edit-signal"></i></span>
+        	<span class="delete-btn" ng-click="delClient(client.id, $event)" ng-show="is_super == 'true'"><i class="dash-cw cw-delete"></i></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--table-style end-->
+</div>

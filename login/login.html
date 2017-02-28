@@ -1,0 +1,25 @@
+<div class="lr-overlay">
+  <div class="lr-wrapper login">
+    <a ng-href="/" class="logo-wrap">
+      <img src="img/logo_gray.svg" alt="">
+    </a>
+
+    <div class="form">
+      <input type="text" class="inpt-style" placeholder="Login" ng-model="user.username" ng-class="{error: loginStage}">
+      <div class="password-wrap">
+        <input type="password" class="inpt-style" placeholder="Password" ng-model="user.password" ng-class="{error: passStage}">
+        <a ng-href="/forgot-password" class="forgot-link">Forgot?</a>
+      </div>
+      <div class="btn-wrap clearfix">
+        <label class="check-rmb">
+          <input type="checkbox">
+          <div class="check-style"></div><span class="text">Remember me</span>
+        </label>
+        <botton class="btn btn-green" ng-click="login(user)">Sing in</botton>
+      </div>
+    </div>
+
+    <span class="text-blk">You do not have an account?</span>
+    <div class="text-center"><a ng-href="/registration" class="create-link">Create an account</a></div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Signum Place</title>
+        
+        <base href="/">
+        
+        <link rel="stylesheet" href="css/preload.css">
+        <link rel="icon" href="img/favicon.ico" type="image/png">
+        
+        <!-- Scripts -->
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-route.js"></script>
+        <script type="text/javascript" src="js/ng-file-upload-shim.js"></script>
+        <script type="text/javascript" src="js/ng-file-upload.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.js"></script>
+        <script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+        <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/owl.carousel.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="landing/controller.js"></script>
+        <script type="text/javascript" src="login/controller.js"></script>
+        <script type="text/javascript" src="signal/controller.js"></script>
+        <script type="text/javascript" src="client/controller.js"></script>
+        <script type="text/javascript" src="manager/controller.js"></script>
+        <script type="text/javascript" src="provider/controller.js"></script>
+        <script type="text/javascript" src="performance/controller.js"></script>
+        <script type="text/javascript" src="header/controller.js"></script>
+        <script type="text/javascript" src="modals/controller.js"></script>
+        <script type="text/javascript" src="footer/controller.js"></script>
+        <script type="text/javascript" src="js/service.js"></script>
+        <script type="text/javascript" src="js/directive.js"></script>
+        <script type="text/javascript" src="js/constants.js"></script>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/land-sprite.css">
+        <link rel="stylesheet" href="css/dash-sprite.css">
+        <link rel="stylesheet" href="css/land-style.css">
+    </head>
+    <body ng-controller="mainCtl">
+       <script>
+          var e = document.createElement('div');
+          e.setAttribute("id", "loader-wrapper");
+          e.innerHTML = '<div id="loader"></div>'; 
+          window.document.body.insertBefore(e, window.document.body.firstChild);
+        </script>
+        
+        <ng-include src="header"></ng-include>
+        
+        <div ng-view ng-show="stage"></div>
+        
+        <div class="container" ng-hide="stage">
+          <div class="content">
+            <div ng-view></div>
+          </div>
+        </div>
+        
+        <ng-include src="footer"></ng-include>
+        
+        <div id="modal" role="dialog" class="modal fade">
+          <div role="document" class="modal-dialog modal-SM">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="close-btn" ng-click="destrModal()"><span></span></div>
+                <ng-include src="modalContant"></ng-include>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <link rel="stylesheet" href="css/media.css">
+        <script>
+          $(window).on('load', function () {
+              var $preloader = $('#loader-wrapper');
+              $preloader.fadeOut();
+              $preloader.delay(350).fadeOut('slow');
+          });
+        </script>
+    </body>
+</html>

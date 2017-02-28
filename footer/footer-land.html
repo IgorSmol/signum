@@ -1,0 +1,61 @@
+<footer class="land" ng-controller="footerCtl">
+  <div class="foot-top">
+    <div class="content land">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-4 hidden-xs">
+            <img src="img/phons.png" class="foot-phons" alt="">
+          </div>
+          <div class="col-lg-6 col-md-7 col-sm-8 col-xs-12">
+            <div class="download-wrap">
+              <span class="title">Бесплатные форекс-сигналы<br/>в Вашем кармане!</span>
+              <p>Установите мобильное приложение Signum Place на Ваш смартфон и ведите торги в любое время, где Вам удобно.</p>
+              <div class="btn-wrap clearfix">
+                <a href="#" class="btn-store"><img src="img/google-play.png" alt=""></a>
+                <a href="#" class="btn-store"><img src="img/apple-store.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-4 col-xs-12">
+          <div class="logo-wrap">
+            <img src="img/logo_gray.svg" alt="">
+          </div>
+          <i class="after-logo">Торговля на валютном рынке с использованием кредитного плеча является высокорискованной инвестицией и может привести как к значительным прибылям, так и к значительным убыткам. Мы не призываем Вас к торговле на валютном рынке Форекс и рекомендуем определить, являются ли приемлемыми для Вас риски, связанные с маржинальной торговлей. Весь контент сайта является ознакомительным и содержит лишь информационные цели.</i>
+          <i class="after-logo">Пользователи сайта несут полную ответственность за совершенные ими торговые операции. Владельцы сервиса и/или веб-сайта не несут никакой ответственности за возможные потери или другие виды прямого или косвенного ущерба, причиненного в связи с использованием сервиса и/или веб-сайта.</i>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="foot-call-back">
+            <span class="ttl">У вас есть вопрос?</span>
+            <input type="text" class="style-inpt" placeholder="Your Name" ng-model="to_mail.name">
+            <input type="text" class="style-inpt" placeholder="Your Email" ng-model="to_mail.email">
+            <input type="text" class="style-inpt" placeholder="Text..." ng-model="to_mail.reply">
+            <div class="text-right">
+              <button class="send-btn" ng-click="sendToMail(to_mail)"><i class="land-cw cw-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="foot-contact">
+            <span class="ttl">Контакты</span>
+            <span class="email"><i class="land-cw cw-email"></i>signumplace@gmail.com</span>
+            <span class="skype"><i class="land-cw cw-skype"></i>sigplace</span>
+
+            <ul class="soc-list">
+              <li><a href="#"><span><i class="land-cw cw-facebook-soc-v"></i></span></a></li>
+              <li><a href="#"><span><i class="land-cw cw-twitter-soc-v"></i></span></a></li>
+              <li><a href="#" class="last"><span><i class="land-cw cw-vk-soc-v"></i></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="copy-right land">&copy; 2017 Signum Place. Все права защищены.</p>
+    </div>
+  </div>
+</footer>

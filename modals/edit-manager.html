@@ -1,0 +1,81 @@
+<h4 class="title">Edit maneger</h4>
+<div class="edit-form" ng-controller="modalCtl">
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <label class="select-stl inv">
+          <input type="checkbox"><span class="selected">{{selectP || 'none'}}</span>
+          <div class="list-wra">
+            <div class="inner-wrap">
+              <ul>
+                <li ng-repeat="provider in selectListP" ng-click="selectedP(provider.provider_name, provider.provider_code)">
+                  {{provider.provider_name}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </label>
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <div class="multi-select-wrap">
+        <div class="multi-select-stl inv" ng-class="{ open: multiOpen }" ng-click="multiOpen = !multiOpen">
+          <!--<span class="selected">{{selectListM || 'Permissions'}}</span>-->
+          <span class="selected">Permissions</span>
+        </div>
+        <div class="list-wra">
+          <div class="inner-wrap">
+            <ul>
+              <li>
+                <div class="check-stl" ng-click="permiss.add_user = !permiss.add_user">
+                  <div class="check-style" ng-class="{ check: permiss.add_user }"></div><span class="text">Add user</span>
+                </div>
+              </li>
+              <li>
+                <div class="check-stl" ng-click="permiss.change_user = !permiss.change_user">
+                  <div class="check-style" ng-class="{ check: permiss.change_user }"></div><span class="text">Change user</span>
+                </div>
+              </li>
+              <li>
+                <div class="check-stl" ng-click="permiss.delete_user = !permiss.delete_user">
+                  <div class="check-style" ng-class="{ check: permiss.delete_user }"></div><span class="text">Delete user</span>
+                </div>
+              </li>
+              <li>
+                <div class="check-stl" ng-click="permiss.add_signal = !permiss.add_signal">
+                  <div class="check-style" ng-class="{ check: permiss.add_signal }"></div><span class="text">Add signal</span>
+                </div>
+              </li>
+              <li>
+                <div class="check-stl" ng-click="permiss.change_signal = !permiss.change_signal">
+                  <div class="check-style" ng-class="{ check: permiss.change_signal }"></div><span class="text">Change signal</span>
+                </div>
+              </li>
+              <li>
+                <div class="check-stl" ng-click="permiss.delete_signal = !permiss.delete_signal">
+                  <div class="check-style" ng-class="{ check: permiss.delete_signal }"></div><span class="text">Delete signal</span>
+                </div>
+              </li>
+              <li>
+                <div class="check-stl" ng-click="permiss.close_signal = !permiss.close_signal">
+                  <div class="check-style" ng-class="{ check: permiss.close_signal }"></div><span class="text">Close signal</span>
+                </div>
+              </li>
+              <li>
+                <div class="check-stl" ng-click="permiss.upload_history = !permiss.upload_history">
+                  <div class="check-style" ng-class="{ check: permiss.upload_history }"></div><span class="text">Upload history</span>
+                </div>
+              </li>
+              
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-btns">
+    <button class="btn btn-green" ng-click="destrModal()">Cancel</button>
+    <button class="btn btn-green" ng-click="updateManager()">Accept</button>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+
+<div class="filters-wrap">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="year-wrap">
+        <label class="select-stl">
+          <input type="checkbox"><span class="selected">{{currYer}} year</span>
+          <div class="list-wra">
+            <div class="inner-wrap">
+              <ul>
+                <li ng-repeat="listYear in yearArr" ng-click="changeYear(listYear)">
+                  {{listYear}} year
+                </li>
+              </ul>
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- filter-wrap end-->
+<!-- end mixin-->
+<div class="table-wrap">
+  <table class="table-style table-perf">
+    <thead>
+      <tr>
+        <td>Month</td>
+        <td>Signals</td>
+        <td>Profit pips</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="signal in signals">
+        <td>
+          <span class="text">{{signal.month}}</span>
+        </td>
+        <td><span class="text">{{signal.signals_count}}</span></td>
+        <td><span class="text red">{{signal.month_performance_pips}}</span></td>
+        <td><span class="detail-btn" ng-click="newCurrDate(signal.month, currYer)">Details <i class="dash-cw cw-detail-signal"></i></span></td>
+      </tr>
+    </tbody>
+  </table>
+  <!--table-style end-->
+</div>

@@ -1,0 +1,58 @@
+<h4 class="title">Edit client</h4>
+<div class="edit-form" ng-controller="modalCtl">
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <label class="select-stl inv">
+        <input type="checkbox"><span class="selected">{{selectP}}</span>
+        <div class="list-wra">
+          <div class="inner-wrap">
+            <ul>
+              <li ng-repeat="provider in selectListP" ng-click="selectedP(provider.provider_name, provider.provider_code)">
+                {{provider.provider_name}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <label class="select-stl inv">
+        <input type="checkbox">
+        <span class="selected" ng-show="selectAcType == userType.expired">expired</span>
+        <span class="selected" ng-show="selectAcType == userType.basic">basic</span>
+        <span class="selected" ng-show="selectAcType == userType.standard">standard</span>
+        <span class="selected" ng-show="selectAcType == userType.premium">premium</span>
+        <div class="list-wra">
+          <div class="inner-wrap">
+            <ul>
+              <li ng-click="selectAccountType(userType.expired)">expired</li>
+        	  <li ng-click="selectAccountType(userType.basic)">basic</li>
+        	  <li ng-click="selectAccountType(userType.standard)">standard</li>
+        	  <li ng-click="selectAccountType(userType.premium)">premium</li>
+            </ul>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+  <!--<div class="item clearfix">
+    <div class="wrap-blk">
+      <span class="itm-title">Expiration date from</span>
+      <span class="ed-from">24.10.2016 | 13:06</span></div>
+  </div>-->
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <span class="itm-title">Expiration date to</span>
+      <div class="datepicker-wrap">
+        <input type="text" class="datepicker">
+        <span class="time">{{editClient.date_signal_receive_to | date:"dd.MM.yy | HH:mm"}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="foot-btns">
+    <button class="btn btn-green" ng-click="destrModal()">Cancel</button>
+    <button class="btn btn-green" ng-click="updateClient()">Accept</button>
+  </div>
+</div>

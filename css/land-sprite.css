@@ -1,0 +1,75 @@
+.land-cw {
+  display: inline-block;
+  background-image: url(../img/land-sprite.png);
+}
+.cw-comm-slider-next {
+  background-position: -18px -20px;
+  width: 20px;
+  height: 14px;
+}
+.cw-comm-slider-next:hover {
+  background-position: -20px -37px;
+}
+.cw-comm-slider-prev {
+  background-position: 0px -37px;
+  width: 20px;
+  height: 14px;
+}
+.cw-comm-slider-prev:hover {
+  background-position: -20px -51px;
+}
+.cw-email {
+  background-position: -56px -16px;
+  width: 16px;
+  height: 14px;
+}
+.cw-facebook-soc {
+  background-position: 0px -51px;
+  width: 8px;
+  height: 16px;
+}
+.cw-facebook-soc-v {
+  background-position: -42px -45px;
+  width: 6px;
+  height: 12px;
+}
+.cw-paper-plane {
+  background-position: 0px -20px;
+  width: 18px;
+  height: 17px;
+}
+.cw-skype {
+  background-position: -56px 0px;
+  width: 16px;
+  height: 16px;
+}
+.cw-top-slider-next {
+  background-position: 0px 0px;
+  width: 28px;
+  height: 20px;
+}
+.cw-top-slider-prev {
+  background-position: -28px 0px;
+  width: 28px;
+  height: 20px;
+}
+.cw-twitter-soc {
+  background-position: -56px -30px;
+  width: 16px;
+  height: 14px;
+}
+.cw-twitter-soc-v {
+  background-position: -48px -45px;
+  width: 12px;
+  height: 10px;
+}
+.cw-vk-soc {
+  background-position: -38px -20px;
+  width: 16px;
+  height: 9px;
+}
+.cw-vk-soc-v {
+  background-position: -60px -45px;
+  width: 12px;
+  height: 7px;
+}

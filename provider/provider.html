@@ -1,0 +1,73 @@
+
+<div class="filters-wrap">
+  <div class="row">
+    <div class="col-xs-12 visible-xs">
+      <div class="right-side">
+        <button class="btn btn-green" data-toggle="modal" data-target="#modal" ng-click="modalTamplate('new-provider')">Add provider</button>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="filters-side">
+        <label class="check-all">
+          <input type="checkbox" ng-click="isChecked = !isChecked">
+          <div class="check-style"></div><span class="text">Select all</span>
+        </label>
+        <span class="delete-btn" ng-click="deleteAll(isChecked)"><i class="dash-cw cw-delete"></i></span>
+        <div class="sort-wrap"><span class="sort-btn" ng-click="reverse = !reverse"><i class="dash-cw cw-sort"></i></span>
+          <label class="filter-slct">
+            <input type="checkbox"><span class="selected" ng-init="select = 'ID clients'">{{select}}</span>
+            <div class="list-wra">
+              <div class="inner-wrap">
+                <ul>
+                  <li ng-click="sortBy('id'); select = 'ID providers'">ID providers</li>
+                  <li ng-click="sortBy('provider_name'); select = 'Provider name'">Provider name</li>
+                  <li ng-click="sortBy('date_created'); select = 'Date created'">Date created</li>
+                </ul>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 hidden-xs">
+      <div class="right-side">
+        <button class="btn btn-green" data-toggle="modal" data-target="#modal" ng-click="modalTamplate('new-provider')">Add provider</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- filter-wrap end-->
+<!-- end mixin-->
+<div class="table-wrap">
+  <table class="table-style table-provider">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Provider name</td>
+        <td>Provider code</td>
+        <td>Assigned manager</td>
+        <td>Date created</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="provider in providers | orderBy:propertyName:reverse" class="for-hide">
+        <td>
+          <label class="check-stl">
+            <input type="checkbox" ng-checked="isChecked" data-checkID="{{provider.id}}">
+            <div class="check-style"></div>
+          </label><span class="id-num">{{provider.id}}</span>
+        </td>
+        <td><span class="text">{{provider.provider_name}}</span></td>
+        <td><span class="text">{{provider.provider_code}}</span></td>
+        <td><span class="text"><span ng-repeat="manager in provider.managers">{{manager.first_name}}, </span></span></td>
+        <td><span class="text">{{provider.date_created | date:"dd.MM.yy | HH:mm"}}</span></td>
+        <td>
+          <span data-toggle="modal"  data-target="#modal" ng-click="modalTamplate('edit-provider'); getDataProvider(provider, provider.managers)" class="edit-btn"><i class="dash-cw cw-edit-signal"></i></span>
+          <span class="delete-btn" ng-click="delProvider(provider.id, $event)"><i class="dash-cw cw-delete"></i></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--table-style end-->
+</div>

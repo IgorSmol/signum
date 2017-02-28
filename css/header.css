@@ -1,0 +1,211 @@
+header {
+  background-color: #314a62;
+}
+header .logo-wrap {
+  float: left;
+  width: 170px;
+  padding-top: 17px;
+  cursor: pointer;
+}
+header .menu {
+  float: left;
+}
+header .menu li {
+  float: left;
+}
+header .menu a {
+  display: block;
+  text-decoration: none !important;
+  outline: none !important;
+  font-size: 16px;
+  font-weight: 600;
+  color: #c1c8d0;
+  padding: 19px 18px;
+}
+header .menu a:hover,
+header .menu a.active {
+  background-color: #2c4258;
+  color: #fff;
+}
+header .right-side {
+  float: right;
+}
+header .user-wrap {
+  position: relative;
+  float: left;
+  padding: 20px 20px 20px 65px;
+  cursor: pointer;
+  min-width: 115px;
+}
+header .user-wrap:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  margin-top: -4px;
+  width: 4px;
+  height: 4px;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+header .user-wrap:hover {
+  background-color: #2c4258;
+}
+header .user-wrap:hover .user-list {
+  display: block;
+}
+header .user-wrap .user-img {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  margin-top: -21px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+header .user-wrap .user-name {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+header .user-wrap .user-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 997;
+  background-color: #2c4258;
+  padding: 5px 0;
+  border-radius: 0 0 2px 2px;
+}
+header .user-wrap .user-list li,
+header .user-wrap .user-list .link {
+  display: block;
+}
+header .user-wrap .user-list .link {
+  position: relative;
+  outline: none !important;
+  text-decoration: none !important;
+  font-size: 14px;
+  font-weight: 600;
+  color: #c1c8d0;
+  padding: 8px 10px 7px 30px;
+}
+header .user-wrap .user-list .link i {
+  position: absolute;
+  top: 11px;
+  left: 8px;
+}
+header .user-wrap .user-list .link:hover {
+  color: #fff;
+  background-color: #314a62;
+}
+header .user-wrap .user-list .link:hover i.cw-pref {
+  background-position: -60px 0px;
+}
+header .user-wrap .user-list .link:hover i.cw-logout {
+  background-position: -44px -16px;
+}
+.mob-menu-btn-dash {
+  display: none;
+  float: left;
+  width: 25px;
+  height: 25px;
+  margin-top: 0px;
+  margin-right: 15px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+}
+.mob-menu-btn-dash .line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #c1c8d0;
+  transition: all .4s linear;
+}
+.mob-menu-btn-dash:hover .line {
+  background-color: #fff;
+  transition: all .4s linear;
+}
+.mob-menu-btn-dash.open .line:nth-child(1) {
+  position: absolute;
+  top: 6px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: all .4s linear;
+}
+.mob-menu-btn-dash.open .line:nth-child(2) {
+  opacity: 0;
+  transition: all .4s linear;
+}
+.mob-menu-btn-dash.open .line:nth-child(3) {
+  position: absolute;
+  top: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  transition: all .4s linear;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  height: 65px;
+  text-align: center;
+}
+footer .call-back-btn {
+  text-decoration: none !important;
+  outline: none !important;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6e6e6e;
+  line-height: 14px;
+  border-bottom: 1px solid #6e6e6e;
+}
+footer .call-back-btn:hover {
+  border-bottom-color: transparent;
+}
+.copy-right {
+  display: block;
+  line-height: 45px;
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #c0c0c0;
+}
+.mob-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -998;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(48, 48, 48, 0.3);
+  transition: all .4s linear;
+}
+.mob-overlay.open {
+  z-index: 998;
+  opacity: 1;
+  visibility: visible;
+  transition: all .4s linear;
+}

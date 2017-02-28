@@ -1,0 +1,25 @@
+<div class="lr-overlay">
+  <div class="lr-wrapper login">
+    <a ng-href="/" class="logo-wrap">
+      <img src="img/logo_gray.svg" alt="">
+    </a>
+
+    <form class="form" name="forgotForm" ng-hide="forgotNextStage">
+      <input type="text" class="inpt-style" name="email" ng-model="email" ng-class="{error: !forgotForm.email.$valid}" placeholder="Enter your email" email-valid>
+      <div class="btn-wrap text-center">
+        <a href="#" class="btn btn-green float-none" ng-click="validEmail(email, forgotForm.email.$valid)">Next</a>
+      </div>
+    </form>
+    
+    <div class="form" ng-show="forgotNextStage">
+      <input type="text" class="inpt-style" ng-model="new.promo_code" ng-class="{error: stage.promo_code}" placeholder="Code from email">
+      <input type="text" class="inpt-style" ng-model="new.pass" ng-class="{error: stage.pass}" placeholder="New password">
+      <input type="text" class="inpt-style" ng-model="new.pass_conf" ng-class="{error: stage.pass_conf}" placeholder="Repeat new password">
+      <div class="btn-wrap text-center">
+        <a href="#" class="btn btn-green float-none" ng-click="newPassSend(new)">Accept</a>
+      </div>
+    </div>
+
+    <div class="text-center"><a ng-href="/login" class="go-back-link">Back to login</a></div>
+  </div>
+</div>

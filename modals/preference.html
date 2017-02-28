@@ -1,0 +1,75 @@
+<h4 class="title">Preferences user</h4>
+<div class="edit-form" ng-controller="preferenceCtl">
+  <div class="item clearfix">
+    <div class="wrap-blk text-center">
+      <div class="upload-wrap">
+        <div class="img-wrap"><img src="{{uploadme}}"></div>
+        <label class="dash-cw cw-upload">
+         <input type="file" fileread="uploadme" />
+        </label>
+      </div>
+      
+      <input type="file" file-input="files">
+      
+      <!--<form ng-app="fileUpload" ng-controller="MyCtrl" name="form">
+        Single Image with validations
+        <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+          ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" 
+          ngf-resize="{width: 100, height: 100}">Select</div>
+        Multiple files
+        <div class="button" ngf-select ng-model="files" ngf-multiple="true">Select</div>
+        Drop files: <div ngf-drop ng-model="files" class="drop-box">Drop</div>
+        <button type="submit" ng-click="submit()">submit</button>
+      </form>-->
+      
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="First name" class="input-stl inv" ng-model="user.first_name">
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Last name" class="input-stl inv" ng-model="user.last_name">
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Phone number" class="input-stl inv" ng-model="user.phone_number">
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Additional email" class="input-stl inv"  ng-model="user.email">
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Country" class="input-stl inv"  ng-model="user.country">
+    </div>
+  </div>
+  <div class="password-wrap clearfix">
+    <div class="item clearfix">
+      <div class="wrap-blk">
+        <span class="sect-title">Do you want change password?</span>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="wrap-blk">
+        <input type="password" placeholder="New password" class="input-stl inv" ng-model="pass.new">
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="wrap-blk">
+        <input type="password" placeholder="Confirm password" class="input-stl inv" ng-model="pass.conf">
+      </div>
+    </div>
+  </div>
+  <div class="foot-btns">
+    <button class="btn btn-green" ng-click="destrModal()">Cancel</button>
+    <!--<button class="btn btn-green" ng-click="updateUser(user, pass)">Save</button>-->
+    <!--<button class="btn btn-green" ng-click="upload(uploadme, user)">Save</button>-->
+    <button class="btn btn-green" ng-click="upload()">Accept</button>
+  </div>
+</div>

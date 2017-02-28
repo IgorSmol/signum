@@ -1,0 +1,30 @@
+<header ng-controller="headerCtl">
+  <div class="container">
+    <div class="logo-wrap">
+      <div class="mob-menu-btn-dash" ng-click="dashMenu()">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+      <a href="/" class="logo-wrap-dash">
+        <img src="img/logo_white.svg" alt="">
+      </a>
+    </div>
+    <ul class="menu mob-menu-wrap clearfix">
+      <li ng-repeat="menu in menuDash">
+        <a ng-href="{{menu.link}}" ng-class="{'active': menu.link == activeItem}" ng-click="boolCurrNewDest(false); changeActive(menu.link);">{{menu.name}}</a>
+      </li>
+    </ul>
+    <div class="right-side">
+      <div class="user-wrap">
+        <div class="user-img"><img ng-src="{{user.image_file}}" alt=""></div><span class="user-name">{{user.first_name || 'no name'}}</span>
+        <ul class="user-list">
+          <li><a href="#" data-toggle="modal" data-target="#modal" ng-click="modalTamplate('preference')" class="pref link"><i class="dash-cw cw-pref"></i>Preferences</a></li>
+          <li><span class="logout link" ng-click="logout()"><i class="dash-cw cw-logout"></i>Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- header end-->
+<div class="mob-overlay"></div>

@@ -1,0 +1,103 @@
+
+<div class="filters-wrap">
+  <div class="row">
+    <div class="col-xs-12 visible-xs">
+      <div class="right-side" ng-hide="is_extend">
+        <button class="btn btn-green" data-toggle="modal" data-target="#modal" ng-click="modalTamplate('new-signal')">Add signal</button>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="filters-side">
+        <label class="check-all">
+          <input type="checkbox" ng-click="isChecked = !isChecked">
+          <div class="check-style"></div><span class="text">Select all</span>
+        </label>
+        <span class="delete-btn" ng-click="deleteAll(isChecked)" ng-hide="is_extend"><i class="dash-cw cw-delete"></i></span>
+        <div class="sort-wrap"><span class="sort-btn" ng-click="reverse = !reverse"><i class="dash-cw cw-sort"></i></span>
+          <label class="filter-slct">
+            <input type="checkbox"><span class="selected" ng-init="select = 'ID signals'">{{select}}</span>
+            <div class="list-wra">
+              <div class="inner-wrap">
+                <ul>
+                  <li ng-click="sortBy('id'); select = 'Date created'">ID signals</li>
+                  <li ng-click="sortBy('date_created'); select = 'Date created'">Date created</li>
+                  <li ng-click="sortBy('pair'); select = 'Pair'">Pair</li>
+                  <li ng-click="sortBy('take_profit'); select = 'Take profit'">Take profit</li>
+                  <li ng-click="sortBy('stop_loss'); select = 'Stop Loss'">Stop Loss</li>
+                </ul>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 hidden-xs">
+      <div class="right-side" ng-hide="is_extend">
+        <button class="btn btn-green" data-toggle="modal" data-target="#modal" ng-click="modalTamplate('new-signal')">Add signal</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- filter-wrap end-->
+<!-- end mixin-->
+<div class="table-wrap">
+  <table class="table-style table-signals">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Action</td>
+        <td>Pair</td>
+        <td>Take profit</td>
+        <td>Stop Loss</td>
+        <td>Profit pips</td>
+        <td>Message</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="signal in $root.signals | orderBy:propertyName:reverse" ng-class="{ 'close-signal': signal.status == signalTypeU.close }">
+        <td>
+          <label class="check-stl">
+            <input type="checkbox" ng-checked="isChecked" class="check-id" data-checkID="{{signal.id}}">
+            <div class="check-style"></div>
+          </label><span class="id-num">{{signal.id}}</span>
+        </td>
+        <td>
+          <span class="action" ng-show="signal.action == signalType.action_buy">Buy</span>
+          <span class="action" ng-show="signal.action == signalType.action_sell">Sell</span>
+          <span class="text">{{signal.date_created | date:"dd.MM.yy"}}</span>
+        </td>
+        <td><span class="pair">{{signal.pair}}</span><span class="pair">{{signal.open_rate}}</span></td>
+        <td><span class="text">{{signal.take_profit}}</span></td>
+        <td><span class="text">{{signal.stop_loss}}</span></td>
+        <td><span class="text" ng-class="{ red: signal.profit_pips < 0, green: signal.profit_pips > 0 }">{{signal.profit_pips || ''}}</span></td>
+        <td class="balloon-tip-wrap">
+          <span class="text width-hidden">{{signal.comment}}</span>
+          <span class="balloon-tip" ng-show="signal.comment.length > 20">{{signal.comment}}</span>
+        </td>
+        <td>
+          <span class="close-siglal-btn" data-toggle="modal" data-target="#modal" ng-click="modalTamplate('close-signal'); getDataSignal(signal)" ng-hide="signal.status == signalTypeU.close || is_extend">
+            <i class="dash-cw cw-close-sigla-o"></i>
+          </span>
+          <span data-toggle="modal" data-target="#modal" ng-click="modalTamplate('edit-msg'); getDataSignal(signal)" class="mesaage-btn" ng-hide="signal.status == signalTypeU.close || is_extend">
+            <i class="dash-cw cw-edit-msg"></i>
+          </span>
+          <span data-toggle="modal" data-target="#modal" ng-click="modalTamplate('edit-signal'); getDataSignal(signal)" class="edit-btn no-margin" ng-hide="signal.status == signalTypeU.close || is_extend">
+            <i class="dash-cw cw-edit-signal"></i>
+          </span>
+          
+          <span class="close-siglal-btn no-action" ng-show="signal.status == signalTypeU.close">
+            <i class="dash-cw cw-close-sigla" ></i>
+          </span>
+          <span class="mesaage-btn no-action" ng-show="signal.status == signalTypeU.close">
+            <i class="dash-cw cw-edit-msg-n"></i>
+          </span>
+          <span class="edit-btn no-action no-margin" ng-show="signal.status == signalTypeU.close">
+            <i class="dash-cw cw-edit-signal-n"></i>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--table-style end-->
+</div>

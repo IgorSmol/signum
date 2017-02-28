@@ -1,0 +1,104 @@
+
+<div class="filters-wrap">
+  <div class="row">
+    <div class="col-xs-12 visible-xs">
+      <div class="right-side">
+        <label class="select-stl">
+          <input type="checkbox"><span class="selected">{{selectP}}</span>
+          <div class="list-wra">
+            <div class="inner-wrap">
+              <ul>
+                <li ng-repeat="provider in selectListP" ng-click="selectedP(provider.provider_name, provider.provider_code)">
+                  {{provider.provider_name}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </label>
+        <button class="btn btn-green" ng-click="moveToProvider()">Move to provider</button>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="filters-side">
+        <label class="check-all">
+          <input type="checkbox" ng-click="isChecked = !isChecked">
+          <div class="check-style"></div><span class="text">Select all</span>
+        </label>
+        <span class="delete-btn" ng-click="deleteAll(isChecked)"><i class="dash-cw cw-delete"></i></span>
+        <div class="sort-wrap"><span class="sort-btn" ng-click="reverse = !reverse"><i class="dash-cw cw-sort"></i></span>
+          <label class="filter-slct">
+            <input type="checkbox"><span class="selected" ng-init="select = 'ID clients'">{{select}}</span>
+            <div class="list-wra">
+              <div class="inner-wrap">
+                <ul>
+                  <li ng-click="sortBy('id'); select = 'ID managers'">ID managers</li>
+                  <li ng-click="sortBy('first_name'); select = 'First name'">First name</li>
+                  <li ng-click="sortBy('provider.provider_name'); select = 'Provider'">Provider</li>
+                  <li ng-click="sortBy('date_created'); select = 'Date created'">Date created</li>
+                </ul>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 hidden-xs">
+      <div class="right-side">
+        <label class="select-stl">
+          <input type="checkbox"><span class="selected">{{selectP}}</span>
+          <div class="list-wra">
+            <div class="inner-wrap">
+              <ul>
+                <li ng-repeat="provider in selectListP" ng-click="selectedP(provider.provider_name, provider.provider_code)">
+                  {{provider.provider_name}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </label>
+        <button class="btn btn-green" ng-click="moveToProvider()">Move to provider</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- filter-wrap end-->
+<!-- end mixin-->
+<div class="table-wrap">
+  <table class="table-style table-maneger">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Extend user</td>
+        <td>First name</td>
+        <td>Last name</td>
+        <td>Provider</td>
+        <td>Date registration</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="manager in managers | orderBy:propertyName:reverse" class="for-hide">
+        <td>
+          <label class="check-stl">
+            <input type="checkbox" ng-checked="isChecked" class="check-id" data-checkID="{{manager.id}}">
+            <div class="check-style"></div>
+          </label><span class="id-num">{{manager.id}}</span>
+        </td>
+        <td>
+          <label class="check-extend">
+            <input type="checkbox" ng-checked="manager.is_extend" ng-click="sendExtend($event, manager.id)"><span class="round"></span><span class="text"></span>
+          </label>
+        </td>
+        <td><span class="text">{{manager.first_name}}</span></td>
+        <td><span class="text">{{manager.last_name}}</span></td>
+        <td><span class="text">{{manager.provider.provider_name || "none"}}</span></td>
+        <td><span class="text">{{manager.date_created | date:"dd.MM.yy | HH:mm"}}</span></td>
+        <td>
+          <span  data-toggle="modal" data-target="#modal" ng-click="modalTamplate('edit-manager'); getDataManager(manager, selectListP, manager.provider)" class="edit-btn"><i class="dash-cw cw-edit-signal"></i></span>
+          <span class="delete-btn" ng-click="delManager(manager.id, $event)"><i class="dash-cw cw-delete"></i></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--table-style end-->
+</div>

@@ -1,0 +1,65 @@
+<h4 class="title">Add signal</h4>
+<div class="edit-form" ng-controller="modalCtl">
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <label class="select-stl inv">
+        <input type="checkbox"><span class="selected" ng-init="selectAct = 'Action'">{{selectAct}}</span>
+        <div class="list-wra">
+          <div class="inner-wrap">
+            <ul>
+              <li ng-click="newSignal.action = signalType.action_buy; selectAct = 'Buy'">Buy</li>
+              <li ng-click="newSignal.action = signalType.action_sell; selectAct = 'Sell'">Sell</li>
+            </ul>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Pair" class="input-stl inv" ng-model="newSignal.pair">
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Open rate" class="input-stl inv" ng-model="newSignal.open_rate">
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Stop loss" class="input-stl inv" ng-model="newSignal.stop_loss">
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Take profit" class="input-stl inv" ng-model="newSignal.take_profit">
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <label class="select-stl inv">
+        <input type="checkbox"><span class="selected" ng-init="selectType = 'Account'">{{selectType}}</span>
+        <div class="list-wra">
+          <div class="inner-wrap">
+            <ul>
+              <li ng-click="newSignal.user_type = userType.expired; selectType = 'expired'">expired</li>
+              <li ng-click="newSignal.user_type = userType.basic; selectType = 'basic'">basic</li>
+              <li ng-click="newSignal.user_type = userType.standard; selectType = 'standard'">standard</li>
+              <li ng-click="newSignal.user_type = userType.premium; selectType = 'premium'">premium</li>
+            </ul>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div class="item clearfix">
+    <textarea placeholder="Message..." class="area-stl inv" ng-model="newSignal.comment"></textarea>
+    <!--<div class="send-btn-wrap">
+      <button class="send-msg"><i class="land-cw cw-paper-plane"></i></button>
+    </div>-->
+  </div>
+  <div class="foot-btns">
+    <button class="btn btn-green" ng-click="destrModal()">Cancel</button>
+    <button class="btn btn-green" ng-click="mewSignal(newSignal)">Send</button>
+  </div>
+</div>

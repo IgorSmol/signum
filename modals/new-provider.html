@@ -1,0 +1,65 @@
+<h4 class="title">Add provider</h4>
+<div class="edit-form" ng-controller="newProviderCtl">
+  <div class="item clearfix">
+    <div class="wrap-blk text-center">
+      <div class="upload-wrap">
+        <div class="img-wrap"><img src="{{uploadme}}"></div>
+        <label class="dash-cw cw-upload">
+         <input type="file" fileread="uploadme" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Provider name" ng-model='provider.provider_name' class="input-stl inv">
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <div class="provider-gen-code">
+        <input type="text" placeholder="00000-00000-00000" ng-model='provider_code' class="input-stl inv">
+        <a href="#" class="gen-code" ng-click="codeGen()">Generate</a>
+      </div>
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <div class="multi-select-wrap">
+        <div class="multi-select-stl inv" ng-class="{ open: multiOpen }" ng-click="multiOpen = !multiOpen"><span class="selected">{{selectList || 'Managers'}}</span></div>
+        <div class="list-wra">
+          <div class="inner-wrap">
+            <ul>
+              <li ng-repeat="manager in managers">
+                <div class="check-stl" ng-click="itemCheck[manager.id] = !itemCheck[manager.id]; multiSelect(selectList, itemCheck[manager.id], manager.first_name, manager.id, 'selectList', 'selectIDList')">
+                  <div class="check-style" ng-class="{ check: itemCheck[manager.id] }"></div><span class="text">{{manager.first_name}}</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="password-wrap clearfix">
+    <div class="item clearfix">
+      <div class="wrap-blk">
+        <span class="sect-title">Do you want change provider price ?</span>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="wrap-blk">
+        <input type="text" placeholder="Standart, $" ng-model='provider.standard_price' class="input-stl inv">
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="wrap-blk">
+        <input type="text" placeholder="Standart, $" ng-model='provider.premium_price' class="input-stl inv">
+      </div>
+    </div>
+  </div>
+  <div class="foot-btns">
+    <button class="btn btn-green" ng-click="destrModal()">Cancel</button>
+    <button class="btn btn-green" ng-click="newProvider(provider)">Accept</button>
+  </div>
+</div>

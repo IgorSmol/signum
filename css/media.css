@@ -1,0 +1,264 @@
+@media (max-width: 1229px) {
+  .main-menu li {
+    padding: 0 10px;
+  }
+  .main-menu a {
+    font-size: 14px;
+  }
+  .table-style.table-clients,
+  .table-style.table-signals {
+    min-width: 1200px;
+  }
+  .table-wrap {
+    overflow-x: auto;
+  }
+  .balloon-tip-wrap:hover .balloon-tip {
+    display: none;
+  }
+  .table-style .text.width-hidden {
+    overflow: visible;
+    width: 195px;
+    height: auto;
+    word-break: break-word;
+  }
+  
+  .table-style.table-perf {
+    min-width: auto;
+  }
+  
+  header.land .btn-wrap .btn {
+    min-width: auto;
+  }
+  
+  #possibleSlider .owl-controls .owl-dots {
+    left: -60px;
+  }
+  
+  .foot-top .download-wrap {
+    padding-left: 0;
+  }
+  
+  .foot-call-back, .foot-contact {
+    padding-left: 0px;
+  }
+}
+@media (max-width: 991px) {
+  .main-menu {
+    display: none;
+  }
+  
+  .mob-menu-wrap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -300px;
+    z-index: 999;
+    width: 250px;
+    padding: 60px 0 25px;
+    background-color: #314a62;
+    -webkit-box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.7);
+    -o-box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.7);
+    -ms-box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.7);
+    box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.7);
+    transition: all .4s linear;
+  }
+  .mob-menu-wrap.open {
+    left: 0;
+    transition: all .4s linear;
+  }
+  header .menu.mob-menu-wrap li {
+    display: block;
+    float: none;
+  }
+  header .menu.mob-menu-wrap a {
+    display: block;
+    text-decoration: none !important;
+    outline: none !important;
+    font-size: 16px;
+    font-weight: 600;
+    color: #c1c8d0;
+    padding: 19px 18px;
+  }
+  
+  .mob-menu-btn-dash,
+  header.land .mob-menu-btn {
+    display: inline-block;
+  }
+  .filters-wrap .right-side .select-stl {
+    min-width: 170px;
+  }
+  .table-style {
+    min-width: 1200px;
+  }
+  
+  #possibleSect {
+    min-height: auto;
+    padding-bottom: 25px;
+  }
+  
+  .foot-phons {
+    margin-top: 210px;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    height: auto;
+  }
+  
+  header.land .logo-wrap img {
+    max-width: 100px;
+  }
+  
+  header.land .btn-wrap {
+    padding: 10px 0;
+  }
+  
+  header .btn-wrap .btn {
+    font-size: 10px;
+    margin-left: 5px;
+  }
+  
+  header .btn-wrap .btn:first-child {
+    margin: 0;
+  }
+  
+  .mob-menu-btn .line {
+    margin: 4px 0;
+  }
+  
+  .filters-wrap .right-side {
+    float: none;
+  }
+  .filters-wrap .right-side .btn {
+    margin: 0 15px 20px 0;
+  }
+  .filters-wrap .right-side .select-stl {
+    margin-right: 15px;
+  }
+  .modal-body {
+    padding: 40px 15px;
+  }
+  
+  .about-item {
+    width: 100%;
+    padding-right: 0;
+  }
+  
+  #possibleSlider {
+    padding-bottom: 45px;
+  }
+  
+  #possibleSlider .owl-controls .owl-dots {
+    text-align: center;
+    top: auto;
+    bottom: 10px;
+    left: 0px;
+    right: 0;
+    width: auto;
+    z-index: 10;
+  }
+  
+  .copy-right {
+    padding-top: 25px;
+  }
+  
+  .table-style.table-perf {
+    min-width: 600px;
+  }
+  
+  header.land .mob-menu-btn {
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 479px) {
+  .top-slider-wrap .item {
+    padding-top: 0px;
+  }
+  
+  .top-slider-wrap .item .title {
+    font-size: 22px;
+  }
+  
+  .top-slider-wrap .item p {
+    font-size: 12px;
+  }
+  
+  .line-ttl, .line-ttl-left {
+    font-size: 22px;
+  }
+  
+  .after-ttl {
+    font-size: 12px;
+  }
+  
+  .comment-item .user-comment {
+    padding: 30px;
+  }
+  
+  .comment-item .user-comment i {
+    font-size: 12px;
+  }
+  
+  .price-item {
+    margin: 30px auto 0;
+  }
+  
+  .about-item .text-wrap p {
+    font-size: 12px;
+  }
+  
+  .possible-item p {
+    font-size: 12px;
+  }
+  
+  .foot-top .download-wrap .title {
+    font-size: 22px;
+  }
+  
+  .foot-top .download-wrap p {
+    font-size: 12px;
+  }
+  
+  .foot-top .download-wrap .btn-store {
+    float: none;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  
+  .foot-bot {
+    padding-top: 10px;
+  }
+  
+  .mob-menu-wrap-land .btn {
+    display: inline-block;
+  }
+  
+  .lr-wrapper {
+    padding: 25px 15px;
+    position: static;
+    -webkit-transform: translate(0%, 0%);
+    -moz-transform: translate(0%, 0%);
+    -o-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+  }
+  
+  .lr-wrapper .form {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .modal-SM {
+    width: auto;
+  }
+  
+  .col-xx {
+    width: 100%;
+  }
+  
+  .hide-xx {
+    display: none;
+  }
+}

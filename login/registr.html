@@ -1,0 +1,57 @@
+<div class="lr-overlay">
+  <div class="lr-wrapper">
+    <a ng-href="/" class="logo-wrap">
+      <img src="img/logo_gray.svg" alt="">
+    </a>
+
+    <span class="text-blk">Register as a user or as a manager?</span>
+
+    <div class="tabs-wrapper text-center">
+      <label class="tab" ng-class="{ active: radio }" ng-click="radio = true">
+        <div><span>User</span></div>
+      </label>
+      <label class="tab" ng-class="{ active: !radio }" ng-click="radio = false">
+        <div><span>Manager</span></div>
+      </label>
+
+      <div class="tab-blk" ng-show="radio">
+        <form class="form text-left" name="registrForm">
+          <input type="text" class="inpt-style" placeholder="First Name" name="fName" ng-model="area.fName" ng-class="{error: !registrForm.fName.$valid}" text-valid>
+          <input type="text" class="inpt-style" placeholder="Last Name" name="lName" ng-model="area.lName" ng-class="{error: !registrForm.lName.$valid}" text-valid>
+          <input type="email" class="inpt-style" placeholder="Email" name="email" ng-model="area.email" ng-class="{error: !registrForm.email.$valid}" email-valid>
+          <input type="password" class="inpt-style" placeholder="Password" ng-model="area.pass" ng-class="{error: userStagePass}">
+          <input type="text" class="inpt-style" placeholder="Promo code" ng-model="area.code">
+          <input type="text" class="inpt-style" placeholder="Country" name="country" ng-model="area.country" ng-class="{error: !registrForm.country.$valid}" text-valid>
+          <input type="text" class="inpt-style" placeholder="Mobile number" name="phone" ng-model="area.phone" ng-class="{error: !registrForm.phone.$valid}" phone-valid>
+          <div class="btn-wrap clearfix">
+            <label class="check-rmb">
+              <input type="checkbox">
+              <div class="check-style"></div><span class="text">Remember me</span>
+            </label>
+            <button class="btn btn-green" ng-click="signup(area, false, registrForm)">Sing up</button>
+          </div>
+        </form>
+      </div>
+      <div class="tab-blk" ng-hide="radio">
+        <form class="form text-left" name="registrMForm">
+          <input type="text" class="inpt-style" placeholder="First Name" name="fNameM" ng-model="areaM.fName" ng-class="{error: !registrMForm.fNameM.$valid}" text-valid>
+          <input type="text" class="inpt-style" placeholder="Last Name" name="lNameM" ng-model="areaM.lName" ng-class="{error: !registrMForm.lNameM.$valid}" text-valid>
+          <input type="email" class="inpt-style" placeholder="Email" name="emailM" ng-model="areaM.email" ng-class="{error: !registrMForm.emailM.$valid}" email-valid>
+          <input type="password" class="inpt-style" placeholder="Password" ng-model="areaM.pass" ng-class="{error: userStagePassM}">
+          <input type="text" class="inpt-style" placeholder="Country" name="countryM" ng-model="areaM.country" ng-class="{error: !registrMForm.countryM.$valid}" text-valid>
+          <input type="text" class="inpt-style" placeholder="Mobile number" name="phoneM" ng-model="areaM.phone" ng-class="{error: !registrMForm.phoneM.$valid}" phone-valid>
+          <div class="btn-wrap clearfix">
+            <label class="check-rmb">
+              <input type="checkbox">
+              <div class="check-style"></div><span class="text">Remember me</span>
+            </label>
+            <button class="btn btn-green" ng-click="signup(areaM, true, registrMForm)">Sing up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <span class="text-blk">You already have an account?</span>
+    <div class="text-center"><a ng-href="/login" class="create-link">Use my account</a></div>
+  </div>
+</div>

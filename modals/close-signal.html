@@ -1,0 +1,17 @@
+<h4 class="title">Close signal</h4>
+<div class="edit-form" ng-controller="modalCtl">
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Profit pips" class="input-stl inv" ng-model="close.profit_pips">
+    </div>
+  </div>
+  <div class="item clearfix">
+    <div class="wrap-blk">
+      <input type="text" placeholder="Close rate" class="input-stl inv" ng-model="close.close_rate">
+    </div>
+  </div>
+  <div class="foot-btns">
+    <button class="btn btn-green" ng-click="destrModal()">Cancel</button>
+    <button class="btn btn-green close-siglal-accep" ng-click="closeSignal(close)">Send</button>
+  </div>
+</div>
